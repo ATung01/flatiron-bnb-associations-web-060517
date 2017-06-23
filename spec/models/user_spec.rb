@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'pry'
 
 describe User do
   let(:katie) { User.create(name: "Katie") }
@@ -11,6 +12,7 @@ describe User do
     let(:nyc) { City.create(name: 'NYC') }
     let(:green_point) { Neighborhood.create(name: 'Green Point', city: nyc) }
     let(:listing) do
+      # binding.pry
       Listing.create(
         address: '6 Maple Street',
         listing_type: "shared room",
@@ -52,6 +54,7 @@ describe User do
       end
 
       it 'has many trips' do
+        # binding.pry
         expect(logan.trips).to include(reservation)
       end
 
